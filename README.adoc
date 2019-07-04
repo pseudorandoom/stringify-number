@@ -1,0 +1,28 @@
+Requirements
+============
+
+The project was built using java 7 and maven
+How to run
+
+Run it by building a jar file
+------------------------------
+To create a jar fie run the following maven command `mvn clean package`
+this should create a file in `target/number-stringifier-1.0-SNAPSHOT.jar`
+which can be run by running `java -jar target/number-stringifier-1.0-SNAPSHOT.jar`
+from the main directory
+
+Run it inside maven
+-------------------
+To run the project directly inside maven run `mvn package exec:java`
+when you get a message like
+`Please write a number: `
+You can type your input to the program and press enter
+
+Run it inside Docker
+--------------------
+This way of running the application is just as running it on maven but maven runs inside
+a docker container
+`docker run --rm -v "$PWD":/app --workdir '/app' -ti openjdk:8u121-alpine ./mvnw package exec:java`
+This will take significantly longer than the other methods
+
+You will receive the same message `Please write a number:`
